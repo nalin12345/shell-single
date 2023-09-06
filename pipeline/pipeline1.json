@@ -1,5 +1,5 @@
 {
-	"name": "Adfv2QuickStartPipeline",
+	"name": "pipeline1",
 	"properties": {
 		"activities": [
 			{
@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@variables('DataArray')",
+						"value": "@pipeline().parameters.account_names",
 						"type": "Expression"
 					},
 					"condition": {
@@ -20,24 +20,14 @@
 			}
 		],
 		"parameters": {
-			"account_name": {
-				"type": "string",
-				"defaultValue": "ab-867"
-			}
-		},
-		"variables": {
-			"DataArray": {
-				"type": "Array",
+			"account_names": {
+				"type": "array",
 				"defaultValue": [
 					"aa",
-					"bb",
-					"cc",
-					"dd"
+					"bb"
 				]
 			}
 		},
-		"annotations": [],
-		"lastPublishTime": "2023-09-06T06:13:15Z"
-	},
-	"type": "Microsoft.DataFactory/factories/pipelines"
+		"annotations": []
+	}
 }
