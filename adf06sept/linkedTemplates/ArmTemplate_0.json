@@ -43,6 +43,12 @@
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
 				},
+				"parameters": {
+					"account_name": {
+						"type": "string",
+						"defaultValue": "ab-867"
+					}
+				},
 				"variables": {
 					"DataArray": {
 						"type": "Array",
@@ -56,6 +62,46 @@
 				},
 				"annotations": [],
 				"lastPublishTime": "2023-09-06T06:13:15Z"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Act_Filter",
+						"type": "Filter",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@pipeline().parameters.account_names",
+								"type": "Expression"
+							},
+							"condition": {
+								"value": "@not(equals(item(),'cc'))",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"parameters": {
+					"account_names": {
+						"type": "array",
+						"defaultValue": [
+							"aa",
+							"bb"
+						]
+					}
+				},
+				"annotations": []
 			},
 			"dependsOn": []
 		},
