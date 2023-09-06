@@ -127,6 +127,9 @@
 					"referenceName": "AzureStorageLinkedService",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "New folder2"
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
@@ -155,6 +158,9 @@
 					"referenceName": "AzureStorageLinkedService",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "New folder2"
+				},
 				"annotations": [],
 				"type": "Binary",
 				"typeProperties": {
@@ -179,6 +185,9 @@
 					"referenceName": "AzureStorageLinkedService",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "New folder1"
+				},
 				"annotations": [],
 				"type": "Binary",
 				"typeProperties": {
@@ -201,6 +210,9 @@
 				"linkedServiceName": {
 					"referenceName": "AzureStorageLinkedService",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "New folder1"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
